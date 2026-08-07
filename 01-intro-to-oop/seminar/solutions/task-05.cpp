@@ -62,41 +62,39 @@ namespace Songs {
         }
 
         Category parseCategoryFromString(const char* str) {
-            using enum Category;
             if (strcmp(str, "Pop") == 0) {
-                return POP;
+                return Category::POP;
             }
             if (strcmp(str, "Rock") == 0) {
-                return ROCK;
+                return Category::ROCK;
             }
             if (strcmp(str, "HipHop") == 0) {
-                return HIPHOP;
+                return Category::HIPHOP;
             }
             if (strcmp(str, "Jazz") == 0) {
-                return JAZZ;
+                return Category::JAZZ;
             }
             if (strcmp(str, "Chalga") == 0) {
-                return CHALGA;
+                return Category::CHALGA;
             }
             if (strcmp(str, "Techno") == 0) {
-                return TECHNO;
+                return Category::TECHNO;
             }
             if (strcmp(str, "Latin") == 0) {
-                return LATIN;
+                return Category::LATIN;
             }
-            return OTHER;
+            return Category::OTHER;
         }
 
         const char* getCategoryName(Category category) {
-            using enum Category;
             switch (category) {
-                case POP: return "Pop";
-                case ROCK: return "Rock";
-                case HIPHOP: return "HipHop";
-                case JAZZ: return "Jazz";
-                case LATIN: return "Latin";
-                case CHALGA: return "Chalga";
-                case TECHNO: return "Techno";
+                case Category::POP: return "Pop";
+                case Category::ROCK: return "Rock";
+                case Category::HIPHOP: return "HipHop";
+                case Category::JAZZ: return "Jazz";
+                case Category::LATIN: return "Latin";
+                case Category::CHALGA: return "Chalga";
+                case Category::TECHNO: return "Techno";
                 default: return "Other";
             }
         }

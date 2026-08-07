@@ -54,27 +54,25 @@ namespace Books {
         }
 
         Genre parseGenreFromString(const char* str) {
-            using enum Genre;
-            if (strcmp(str, "Classic") == 0) return CLASSIC;
-            if (strcmp(str, "Sci-fi") == 0) return SCIFI;
-            if (strcmp(str, "Fantasy") == 0) return FANTASY;
-            if (strcmp(str, "Romance") == 0) return ROMANCE;
-            if (strcmp(str, "Crime") == 0) return CRIME;
-            if (strcmp(str, "NonFiction") == 0) return NONFICTION;
-            if (strcmp(str, "Educational") == 0) return EDUCATIONAL;
-            return OTHER;
+            if (strcmp(str, "Classic") == 0) return Genre::CLASSIC;
+            if (strcmp(str, "Sci-fi") == 0) return Genre::SCIFI;
+            if (strcmp(str, "Fantasy") == 0) return Genre::FANTASY;
+            if (strcmp(str, "Romance") == 0) return Genre::ROMANCE;
+            if (strcmp(str, "Crime") == 0) return Genre::CRIME;
+            if (strcmp(str, "NonFiction") == 0) return Genre::NONFICTION;
+            if (strcmp(str, "Educational") == 0) return Genre::EDUCATIONAL;
+            return Genre::OTHER;
         }
 
         const char* getGenreName(Genre genre) {
-            using enum Genre;
             switch (genre) {
-                case CLASSIC: return "Classic";
-                case SCIFI: return "Sci-fi";
-                case FANTASY: return "Fantasy";
-                case ROMANCE: return "Romance";
-                case CRIME: return "Crime";
-                case NONFICTION: return "NonFiction";
-                case EDUCATIONAL: return "Educational";
+                case Genre::CLASSIC: return "Classic";
+                case Genre::SCIFI: return "Sci-fi";
+                case Genre::FANTASY: return "Fantasy";
+                case Genre::ROMANCE: return "Romance";
+                case Genre::CRIME: return "Crime";
+                case Genre::NONFICTION: return "NonFiction";
+                case Genre::EDUCATIONAL: return "Educational";
                 default: return "Other";
             }
         }
